@@ -34,6 +34,10 @@ namespace SistemaVenta.IOC
             //Agrego la dependencia del envío de correo
             services.AddScoped<ICorreoService, CorreoService>();
             services.AddScoped<IFireBaseService, FireBaseService>();
+
+            //Inyeccion de dependencia para IUtilidades
+            services.AddScoped<IUtilidadesService, UtilidadesService>(); //Clase Utilidades
+            services.AddScoped<IRolService, RolService>(); //Clase RolService
         }
     }
 }
