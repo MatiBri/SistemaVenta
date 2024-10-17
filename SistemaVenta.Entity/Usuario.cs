@@ -5,6 +5,9 @@ namespace SistemaVenta.Entity;
 
 public partial class Usuario
 {
+    public Usuario() { 
+        Venta = new HashSet<Venta>();
+    }
     public int IdUsuario { get; set; }
 
     public string? Nombre { get; set; }
@@ -25,7 +28,7 @@ public partial class Usuario
 
     public DateTime? FechaRegistro { get; set; }
 
-    public virtual Rol? IdRolNavigation { get; set; }
+    public virtual Rol? IdRolNavigation { get; set; } // Este ususuario tiene una propieda que define cuál es el rol del usuario
 
     public virtual ICollection<Venta> Venta { get; set; } = new List<Venta>();
 }

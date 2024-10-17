@@ -16,9 +16,9 @@ namespace SistemaVenta.DAL.Implementacion
     {
         private readonly DbventaContext _dbContext; //Este es el contexto hacia la BD
         //Creo el constructor para recibir el contexto de la BD
-        public GenericRepository(DbventaContext _dbContext)
+        public GenericRepository(DbventaContext dbContext)
         {
-            
+            _dbContext = dbContext;
         }
         public async Task<TEntity> Obtener(Expression<Func<TEntity, bool>> filtro)
         {

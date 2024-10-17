@@ -1,17 +1,15 @@
-﻿
+﻿﻿
 @{
-    ViewData["Title"] = "Usuario";
+    ViewData["Title"] = "Usuarios";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @section Estilos{
-    <!-- ============================================================
-    =ESTILOS PARA ESTA PAGINA
-    ===============================================================-->
     <link rel="stylesheet" href="~/vendor/datatables/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="~/vendor/datatables/extensiones/css/responsive.dataTables.min.css">
     <link rel="stylesheet" href="~/vendor/datatables/extensiones/css/buttons.dataTables.min.css">
 }
+
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -21,7 +19,7 @@
     <div class="card-body">
         <div class="row">
             <div class="col-sm-3">
-                <button class="btn btn-success" data-toggle="modal" data-target="#modalData"><i class="fas fa-user-plus"></i> Nuevo Usuario</button>
+                <button class="btn btn-success" id="btnNuevo"><i class="fas fa-user-plus"></i> Nuevo Usuario</button>
             </div>
         </div>
         <hr />
@@ -41,40 +39,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td><img style="height:60px ;" src="https://images.unsplash.com/photo-1519648023493-d82b5f8d7b8a?w=300" class="rounded mx-auto d-block" /></td>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td><span class="badge badge-info">Activo</span></td>
-                            <td>
-                                <button class="btn btn-primary btn-sm">
-                                    <i class="fas fa-pencil-alt"></i>
-                                </button>
-                                <button class="btn btn-danger btn-sm">
-                                    <i class="fas fa-trash-alt"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td><img style="height:60px ;" src="https://images.unsplash.com/photo-1519648023493-d82b5f8d7b8a?w=300" class="rounded mx-auto d-block" /></td>
-                            <td>Garrett Winters</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>63</td>
-                            <td><span class="badge badge-danger">No Activo</span></td>
-                            <td>
-                                <button class="btn btn-primary btn-sm">
-                                    <i class="fas fa-pencil-alt"></i>
-                                </button>
-                                <button class="btn btn-danger btn-sm">
-                                    <i class="fas fa-trash-alt"></i>
-                                </button>
-                            </td>
-                        </tr>
+                        <!-- Esta tabla se llena con javascript "Usuario_index.js" -->
                     </tbody>
                 </table>
             </div>
@@ -115,7 +80,7 @@
                                 <div class="form-group col-sm-6">
                                     <label for="cboRol">Rol</label>
                                     <select class="form-control form-control-sm" id="cboRol">
-                                        <option value="1">Administrador</option>
+                                        @*se llena a travez de "fetch" en javascript*@
                                     </select>
                                 </div>
                             </div>
@@ -148,20 +113,22 @@
     </div>
 </div>
 
+
 @section Scripts{
-    <!-- ============================================================
-    =SCRIPTS PARA ESTA PAGINA
-    ===============================================================-->
-    <script src=" ~/vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src=" ~/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-                  
-    <script src=" ~/vendor/datatables/extensiones/js/dataTables.responsive.min.js"></script>
-                  
-    <script src=" ~/vendor/datatables/extensiones/js/dataTables.buttons.min.js"></script>
-    <script src=" ~/vendor/datatables/extensiones/js/jszip.min.js"></script>
-    <script src=" ~/vendor/datatables/extensiones/js/buttons.html5.min.js"></script>
-    <script src=" ~/vendor/datatables/extensiones/js/buttons.print.min.js"></script>
+
+    <script src="~/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <script src="~/vendor/datatables/extensiones/js/dataTables.responsive.min.js"></script>
+
+    <script src="~/vendor/datatables/extensiones/js/dataTables.buttons.min.js"></script>
+    <script src="~/vendor/datatables/extensiones/js/jszip.min.js"></script>
+    <script src="~/vendor/datatables/extensiones/js/buttons.html5.min.js"></script>
+    <script src="~/vendor/datatables/extensiones/js/buttons.print.min.js"></script>
+
+    <script src="~/js/vistas/Usuario_Index.js"></script>
 
     <!-- SOLO ES DE EJEMPLO - IGNORAR -->
-    <script src="~/js/vistas/datatables-demo.js"></script>
+    @*<script src="~/js/vistas/datatables-demo.js"></script>*@
+
 }

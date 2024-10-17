@@ -38,6 +38,13 @@ namespace SistemaVenta.IOC
             //Inyeccion de dependencia para IUtilidades
             services.AddScoped<IUtilidadesService, UtilidadesService>(); //Clase Utilidades
             services.AddScoped<IRolService, RolService>(); //Clase RolService
+
+            //Usuario Service y clase que la implementa
+            services.AddScoped<IUsuarioService, UsuarioService>(); //
+
+            services.AddScoped<INegocioService, NegocioService>(); // Clase NegocioService
+
+
         }
     }
 }

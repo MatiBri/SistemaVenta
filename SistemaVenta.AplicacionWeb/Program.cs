@@ -1,3 +1,6 @@
+//Importo la carpeta que contiene el Automapper
+using SistemaVenta.AplicacionWeb.Utilidades.Automapper;
+
 using SistemaVenta.IOC;
 
 namespace SistemaVenta.AplicacionWeb
@@ -14,6 +17,9 @@ namespace SistemaVenta.AplicacionWeb
 
             builder.Services.InyectarDependencia(builder.Configuration); //De esta forma todas las inyecciónes que esten declarados en "Dependencia.cs"
             //nos servirá para nuestros servicios que creemos
+
+            //INYECTO EL AUTOMAPPER
+            builder.Services.AddAutoMapper(typeof(AutoMapperProfile)); //Con esto hago uso de toda la configuración de Automapper dentro de todo el proyecto
 
             var app = builder.Build();
 
